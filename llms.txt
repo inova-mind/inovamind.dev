@@ -1,0 +1,29 @@
+# Inovamind
+
+> IA do seu jeito: automação inteligente e funcionários virtuais 24/7 para PMEs
+
+A Inovamind é uma empresa brasileira focada em **automação inteligente e IA aplicada** para pequenas e médias empresas. Implementamos funcionários virtuais que operam 24/7, processos otimizados e soluções completas que entregam economia de até 70%. Atuamos do desenho da arquitetura à operação contínua: do agente conversacional que atende o cliente ao pipeline que orquestra dados, dos chatbots integrados ao CRM aos workflows que disparam ações em sistemas legados. Cada solução é auditada, documentada e mensurável, o cliente vê resultados desde o primeiro mês.
+
+## Serviços
+
+- Funcionários IA / agentes inteligentes 24/7 (atendimento, triagem, qualificação)
+- Automação de processos (RPA, workflows, integrações entre sistemas)
+- Chatbots e atendimento automatizado (WhatsApp, Telegram, web)
+- Engenharia de dados (pipelines, dashboards, observabilidade)
+- Consultoria em IA aplicada para PMEs
+- Painéis sob medida e dashboards de gestão
+
+## Tecnologias principais
+
+- Python, JavaScript, Bash
+- FastAPI, n8n, LangChain, OpenAI/Anthropic APIs
+- PostgreSQL, MySQL, MariaDB, SQLite
+- Apache Airflow, Forgejo, Docker, Linux
+- Cloudflare, Nginx
+
+## Contato
+
+- Site: https://www.inovamind.dev
+- Contato administrativo: contato@inovamind.dev
+- E-mail comercial: contato@inovamind.dev
+- Suporte: contato@inovamind.dev

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Política de Privacidade · Inovamind</title>
+    <meta name="description" content="Como a Inovamind coleta, usa, armazena e protege dados pessoais de clientes e visitantes em conformidade com a LGPD (Lei nº 13.709/2018)." />
+    <meta name="author" content="Inovamind" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.inovamind.dev/politica-de-privacidade" />
+    <link rel="alternate" hreflang="pt-BR" href="https://www.inovamind.dev/politica-de-privacidade" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <meta property="og:title" content="Política de Privacidade · Inovamind" />
+    <meta property="og:description" content="Tratamento de dados pessoais pela Inovamind: bases legais, retenção, direitos do titular e contato do Encarregado (DPO)." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.inovamind.dev/politica-de-privacidade" />
+    <meta property="og:image" content="https://www.inovamind.dev/og-img.jpg" />
+
+    <link rel="stylesheet" href="/static/css/politica.css?v=6a79eff31aa7" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href="/" class="brand">Inovamind</a>
+      <nav>
+        <a href="/">Início</a>
+        <a href="mailto:dpo@inovamind.dev">DPO</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Política de Privacidade</h1>
+      <p class="updated">Última atualização: 12 de maio de 2026</p>
+
+      <p>
+        Esta Política descreve como a <strong>Inovamind</strong>
+        ("Inovamind", "nós") trata dados pessoais coletados por meio
+        deste site (<code>inovamind.dev</code>),
+        dos painéis administrativos e dos sistemas que mantém para
+        clientes. O tratamento é regido pela
+        <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">Lei nº 13.709/2018
+        (LGPD)</a>.
+      </p>
+
+      <div class="callout">
+        Para exercer qualquer direito previsto na LGPD ou esclarecer
+        dúvidas sobre o tratamento dos seus dados, entre em contato
+        com o nosso Encarregado pelo Tratamento de Dados (DPO):
+        <a href="mailto:dpo@inovamind.dev">dpo@inovamind.dev</a>.
+        Resposta em até <strong>15 dias corridos</strong>.
+      </div>
+
+      <h2>1. Quem somos</h2>
+      <p>
+        A Inovamind é uma empresa de tecnologia que desenvolve e opera
+        soluções de automação e inteligência artificial para PMEs.
+        Atuamos como <strong>controladora</strong> dos dados coletados
+        diretamente em <code>inovamind.dev</code> e como
+        <strong>operadora</strong> dos dados dos clientes (titulares
+        finais) sob nossa custódia nos painéis sob domínio
+        <code>*.inovamind.dev</code>.
+      </p>
+
+      <h2>2. Dados pessoais coletados</h2>
+      <h3>2.1 Visitantes do site</h3>
+      <ul>
+        <li>Dados técnicos automáticos: endereço IP (ofuscado/proxy
+          via Cloudflare), tipo de navegador, sistema operacional,
+          páginas visitadas, referenciador.</li>
+        <li>Dados fornecidos voluntariamente em formulários de contato
+          ou newsletter: nome, e-mail, telefone (quando informados).</li>
+      </ul>
+      <h3>2.2 Clientes ativos (painéis)</h3>
+      <ul>
+        <li>Dados de identificação: nome, e-mail, telefone, CPF
+          (quando aplicável a obrigações fiscais).</li>
+        <li>Dados de autenticação: hash de senha (Argon2), tokens de
+          sessão (JWT ES256), histórico de tentativas de login.</li>
+        <li>Dados operacionais específicos do produto contratado
+          (ex.: campanhas, conciliações, anamneses, conversas com IA,
+          pedidos de e-commerce, conforme o painel).</li>
+      </ul>
+
+      <h2>3. Base legal e finalidade</h2>
+      <table class="tbl">
+        <thead>
+          <tr class="thl">
+            <th class="pd">Finalidade</th>
+            <th class="pd">Base legal (LGPD art. 7º/11)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rb">
+            <td class="pd">Execução do contrato (entrega de produto/painel)</td>
+            <td class="pd">Execução de contrato (art. 7º V)</td>
+          </tr>
+          <tr class="rb">
+            <td class="pd">Atendimento, marketing direto a clientes</td>
+            <td class="pd">Legítimo interesse (art. 7º IX)</td>
+          </tr>
+          <tr class="rb">
+            <td class="pd">Emissão de notas fiscais, registros contábeis</td>
+            <td class="pd">Obrigação legal/regulatória (art. 7º II)</td>
+          </tr>
+          <tr class="rb">
+            <td class="pd">Cookies analíticos não-essenciais</td>
+            <td class="pd">Consentimento (art. 7º I)</td>
+          </tr>
+          <tr>
+            <td class="pd">Logs de segurança (CrowdSec, AIDE, auth audit)</td>
+            <td class="pd">Legítimo interesse / proteção ao crédito (art. 7º IX/X)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>4. Retenção</h2>
+      <ul>
+        <li><strong>Dados de visitante anônimo:</strong> logs de
+          acesso retidos por até 90 dias (rotação <code>logrotate</code>).</li>
+        <li><strong>Dados de cliente ativo:</strong> mantidos durante
+          toda a relação contratual e por mais 5 anos após o
+          encerramento, para cumprimento de obrigações fiscais e
+          tributárias (Receita Federal/CTN art. 173).</li>
+        <li><strong>Dados de prontuário (painéis de saúde, ex. agente
+          nutricionista):</strong> 20 anos, conforme CFN/CRN.</li>
+        <li><strong>Dados anonimizados</strong> após pedido de
+          esquecimento permanecem indefinidamente para integridade da
+          trilha de auditoria, sem qualquer informação que permita
+          re-identificação.</li>
+      </ul>
+
+      <h2>5. Direitos do titular (LGPD art. 18)</h2>
+      <ol>
+        <li>Confirmação da existência de tratamento;</li>
+        <li>Acesso aos dados;</li>
+        <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>Anonimização, bloqueio ou eliminação de dados desnecessários
+          ou excessivos;</li>
+        <li>Portabilidade dos dados a outro fornecedor;</li>
+        <li>Eliminação dos dados tratados com consentimento;</li>
+        <li>Informação das entidades públicas e privadas com as quais
+          a Inovamind compartilhou dados;</li>
+        <li>Informação sobre a possibilidade de não fornecer
+          consentimento e suas consequências;</li>
+        <li>Revogação do consentimento.</li>
+      </ol>
+      <p>
+        Para exercer qualquer direito, envie e-mail para
+        <a href="mailto:dpo@inovamind.dev">dpo@inovamind.dev</a>.
+        Clientes ativos podem usar também o endpoint <code>POST
+        /lgpd/esquecimento</code> diretamente em seu painel.
+      </p>
+
+      <h2>6. Compartilhamento e transferência internacional</h2>
+      <p>
+        Para operar nossos serviços, contamos com sub-operadores que
+        podem processar dados pessoais, todos com DPAs (Data
+        Processing Agreements) e cláusulas-padrão de transferência
+        internacional, em conformidade com o art. 33 da LGPD:
+      </p>
+      <ul>
+        <li><strong>Cloudflare</strong> (CDN/proxy/Email Routing):
+          Estados Unidos. <a href="https://www.cloudflare.com/privacypolicy/">Política</a>.</li>
+        <li><strong>OpenAI/Anthropic</strong> (LLMs usados pelos
+          agentes IA), Estados Unidos.
+          <a href="https://openai.com/policies/privacy-policy">OpenAI</a> ·
+          <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>.</li>
+        <li><strong>Twilio</strong> (mensageria WhatsApp, quando
+          aplicável), Estados Unidos. <a href="https://www.twilio.com/legal/privacy">Política</a>.</li>
+        <li><strong>MercadoPago / Bling</strong> (pagamentos e ERP, no
+          painel <em>bikemaniaitabira</em>), Brasil.</li>
+      </ul>
+      <p>
+        Não vendemos, alugamos ou cedemos dados pessoais a terceiros
+        para fins de marketing externo.
+      </p>
+
+      <h2>7. Cookies</h2>
+      <p>
+        Este site usa cookies estritamente necessários (sessão, CSRF,
+        idioma). Cookies analíticos só são ativados após consentimento
+        explícito. Você pode desabilitar cookies nas configurações do
+        seu navegador.
+      </p>
+
+      <h2>8. Segurança</h2>
+      <p>
+        Aplicamos medidas técnicas e organizacionais para proteção dos
+        dados: TLS 1.2+ obrigatório no edge, hash Argon2 para senhas,
+        JWT ES256 para autenticação, firewall default-drop (nftables),
+        análise de logs em tempo real (CrowdSec), file integrity
+        monitoring (AIDE), backups criptografados, segregação de
+        ambientes e princípio do menor privilégio para acesso interno.
+      </p>
+
+      <h2>9. Incidentes de segurança</h2>
+      <p>
+        Em caso de incidente de segurança que possa acarretar risco ou
+        dano relevante aos titulares, comunicamos à
+        <a href="https://www.gov.br/anpd/pt-br">Autoridade Nacional de
+        Proteção de Dados (ANPD)</a> e aos titulares afetados em
+        prazo razoável, conforme art. 48 da LGPD e Resolução CD/ANPD
+        15/2024. Internamente operamos com SLA de <strong>4 horas</strong>
+        entre detecção e início da comunicação.
+      </p>
+
+      <h2>10. Encarregado (DPO)</h2>
+      <p>
+        <strong>Encarregado pelo Tratamento de Dados:</strong> Inovamind
+        (designação interna)<br>
+        <strong>E-mail:</strong> <a href="mailto:dpo@inovamind.dev">dpo@inovamind.dev</a>
+      </p>
+
+      <h2>11. Alterações</h2>
+      <p>
+        Esta Política pode ser atualizada periodicamente. Mudanças
+        materiais serão comunicadas aos titulares por e-mail (quando
+        houver conta ativa) ou por aviso destacado no site, com
+        antecedência mínima de 15 dias.
+      </p>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 Inovamind ·
+        <a href="/">Início</a> ·
+        <a href="/politica-de-privacidade">Privacidade</a> ·
+        DPO: <a href="mailto:dpo@inovamind.dev">dpo@inovamind.dev</a>
+      </p>
+    </footer>
+  </body>
+</html>

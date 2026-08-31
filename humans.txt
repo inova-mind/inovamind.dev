@@ -1,0 +1,11 @@
+Company: Inovamind
+Tagline: IA do seu jeito
+Site: https://www.inovamind.dev
+Contact: contato@inovamind.dev
+Support: contato@inovamind.dev
+Founder: Thales Fernandes, https://thalesfernandes.dev
+From: Brasil
+Last update: 2026-05-07
+Language: Portuguese (Brazil)
+Standards: HTML5, CSS3
+Hosted: Debian + Nginx + Cloudflare
