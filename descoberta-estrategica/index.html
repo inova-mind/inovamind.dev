@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descoberta Estratégica | Inovamind</title>
+    <link rel="preload" as="font" type="font/woff2" href="/static/fonts/inter.woff2" crossorigin>
+    <link rel="stylesheet" href="/static/css/descoberta.css?v=6a79eff31aa7">
+</head>
+<body>
+    <div class="bg-aurora"></div>
+
+    <header class="border-b border-border bg-background/70 backdrop-blur-xl sticky top-0 z-50">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <a href="/" class="flex items-center gap-2.5">
+                <svg class="lucide w-8 h-8 text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22V7a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 0 0-1-1H2" />
+  <rect x="14" y="2" width="8" height="8" rx="1" /></svg>
+                <span class="text-xl font-bold tracking-tight">
+                    Inova<span class="text-gradient">mind</span>
+                </span>
+            </a>
+            <a href="/" class="text-sm text-muted-foreground hover:text-foreground flex items-center gap-2">
+                <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7" />
+  <path d="M19 12H5" /></svg> Voltar
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center p-6 py-12 md:py-24">
+        <!-- Hero -->
+        <div class="text-center max-w-3xl mb-12" id="hero-section">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Descubra onde sua empresa pode ganhar <span class="text-gradient">eficiência, escala e inteligência.</span></h1>
+            <p class="text-lg text-muted-foreground mb-8">Responda algumas perguntas estratégicas e nossa equipe identificará oportunidades reais para automação, inteligência artificial, integração de sistemas e otimização de processos.</p>
+            <button data-action="start" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+                Iniciar Diagnóstico <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></svg>
+            </button>
+        </div>
+
+        <!-- Formulário -->
+        <div id="form-container" class="w-full max-w-4xl hidden">
+            <div class="glass-card rounded-2xl p-6 md:p-10 shadow-2xl">
+                
+                <!-- Progress -->
+                <div class="mb-8" id="progress-container">
+                    <div class="flex justify-between text-sm font-medium text-muted-foreground mb-2">
+                        <span>Progresso do Diagnóstico</span>
+                        <span id="progress-text">Etapa 1 de 6</span>
+                    </div>
+                    <div class="w-full bg-border rounded-full h-2">
+                        <div id="progress-bar" class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-500" style="width: 16.6%"></div>
+                    </div>
+                </div>
+
+                <form id="diagnosisForm" onsubmit="return false;">
+                    <!-- Step 1 -->
+                    <div class="step active" id="step-1">
+                        <h2 class="text-2xl font-bold mb-6">Vamos entender sua operação atual</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">1. Qual comportamento ou processo você gostaria de melhorar?</label>
+                                <textarea name="cenario_problema" rows="3" class="input-field" placeholder="Descreva brevemente o processo atual..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">2. O que acontece hoje por causa desse problema?</label>
+                                <textarea name="cenario_consequencia" rows="3" class="input-field" placeholder="Ex: Perda de vendas, atrasos, custos altos..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">3. Como você saberia que esse problema foi resolvido?</label>
+                                <textarea name="cenario_sucesso" rows="3" class="input-field" placeholder="Ex: Quando o tempo de resposta cair para menos de 1 minuto..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">4. O que já foi tentado anteriormente?</label>
+                                <textarea name="cenario_tentativas" rows="3" class="input-field" placeholder="Ex: Contratamos mais pessoas, testamos outro software..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">5. O que você não quer que aconteça durante uma possível solução?</label>
+                                <textarea name="cenario_restricoes" rows="3" class="input-field" placeholder="Ex: Não quero que meus clientes falem com um robô burro..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step" id="step-2">
+                        <h2 class="text-2xl font-bold mb-6">Como sua empresa funciona hoje?</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Quais processos consomem mais tempo da equipe?</label>
+                                <textarea name="op_tempo" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Quais tarefas são repetitivas?</label>
+                                <textarea name="op_repetitivas" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Onde existem retrabalhos?</label>
+                                <textarea name="op_retrabalho" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Onde existem gargalos?</label>
+                                <textarea name="op_gargalos" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-4">Quais departamentos seriam mais beneficiados por automação?</label>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_comercial" value="Comercial" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Comercial</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_marketing" value="Marketing" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Marketing</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_atendimento" value="Atendimento" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Atendimento</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_financeiro" value="Financeiro" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Financeiro</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_operacoes" value="Operações" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Operações</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_rh" value="RH" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">RH</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_logistica" value="Logística" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Logística</div>
+                                    </label>
+                                    <label class="cursor-pointer relative">
+                                        <input type="checkbox" name="op_dept_outros" value="Outros" class="peer sr-only checkbox-input">
+                                        <div class="checkbox-label peer-checked:border-primary peer-checked:bg-primary/10">Outros</div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step" id="step-3">
+                        <h2 class="text-2xl font-bold mb-6">Qual a musculatura tecnológica atual?</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-4">Quais ferramentas utiliza atualmente?</label>
+                                <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_erp" value="ERP" class="peer sr-only checkbox-input"><div class="checkbox-label">ERP</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_crm" value="CRM" class="peer sr-only checkbox-input"><div class="checkbox-label">CRM</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_wpp" value="WhatsApp Business" class="peer sr-only checkbox-input"><div class="checkbox-label">WhatsApp Business</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_ecom" value="E-commerce" class="peer sr-only checkbox-input"><div class="checkbox-label">E-commerce</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_bi" value="BI" class="peer sr-only checkbox-input"><div class="checkbox-label">BI</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_pbi" value="Power BI" class="peer sr-only checkbox-input"><div class="checkbox-label">Power BI</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_gw" value="Google Workspace" class="peer sr-only checkbox-input"><div class="checkbox-label">Google Workspace</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_m365" value="Microsoft 365" class="peer sr-only checkbox-input"><div class="checkbox-label">Microsoft 365</div></label>
+                                    <label class="cursor-pointer relative"><input type="checkbox" name="tech_sys" value="Sistemas Próprios" class="peer sr-only checkbox-input"><div class="checkbox-label">Sistemas próprios</div></label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Liste as ferramentas específicas que utiliza (Nomes dos sistemas):</label>
+                                <textarea name="tech_lista" rows="3" class="input-field" placeholder="Ex: Omie, RD Station, VTEX..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step" id="step-4">
+                        <h2 class="text-2xl font-bold mb-6">Onde você acredita que a tecnologia pode ajudar?</h2>
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_atendimento" value="Atendimento Automatizado" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Atendimento automatizado</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_vendas" value="Vendas" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Vendas</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_mkt" value="Marketing" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Marketing</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_integ" value="Integrações" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Integrações</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_dash" value="Dashboards" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Dashboards</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_relatorios" value="Relatórios" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Relatórios</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_docs" value="Processamento de documentos" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Processamento de Docs</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_ia" value="IA Generativa" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">IA Generativa</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_agentes" value="Agentes de IA" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Agentes de IA</div></label>
+                                <label class="cursor-pointer relative"><input type="checkbox" name="oport_workflow" value="Workflow" class="peer sr-only checkbox-input"><div class="checkbox-label text-sm text-center justify-center">Workflow</div></label>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Explique sua visão ou expectativa:</label>
+                                <textarea name="oport_expectativa" rows="4" class="input-field" placeholder="O que seria o cenário ideal para você?"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="step" id="step-5">
+                        <h2 class="text-2xl font-bold mb-6">Objetivos do Projeto</h2>
+                        <div class="space-y-5">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Problema: Por que esse problema existe?</label>
+                                <textarea name="prd_problema" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Contexto: O que levou a essa situação?</label>
+                                <textarea name="prd_contexto" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Objetivo: Onde deseja chegar?</label>
+                                <textarea name="prd_objetivo" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Solução Esperada: O que imagina que deveria existir?</label>
+                                <textarea name="prd_solucao" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Requisitos: O que obrigatoriamente deve acontecer?</label>
+                                <textarea name="prd_requisitos" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Métricas: Como saberemos que foi um sucesso?</label>
+                                <textarea name="prd_metricas" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Restrições: Existe algo que não pode ocorrer?</label>
+                                <textarea name="prd_restricoes" rows="2" class="input-field"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Dependências: Existe alguma limitação técnica ou operacional?</label>
+                                <textarea name="prd_dependencias" rows="2" class="input-field"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="step" id="step-6">
+                        <h2 class="text-2xl font-bold mb-2">Receba uma análise inicial da nossa equipe</h2>
+                        <p class="text-muted-foreground mb-6">Falta pouco! Precisamos apenas de alguns dados para entrarmos em contato com o diagnóstico e plano de ação.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Nome Completo *</label>
+                                <input type="text" name="lead_nome" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Empresa *</label>
+                                <input type="text" name="lead_empresa" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Cargo *</label>
+                                <input type="text" name="lead_cargo" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">E-mail Corporativo *</label>
+                                <input type="email" name="lead_email" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">WhatsApp *</label>
+                                <input type="text" name="lead_whatsapp" class="input-field" placeholder="(00) 00000-0000" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Cidade / Estado *</label>
+                                <input type="text" name="lead_cidade" class="input-field" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Número de Colaboradores *</label>
+                                <select name="lead_colaboradores" class="input-field" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="1-10">1 a 10</option>
+                                    <option value="11-50">11 a 50</option>
+                                    <option value="51-200">51 a 200</option>
+                                    <option value="201-500">201 a 500</option>
+                                    <option value="500+">Mais de 500</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-1">Faturamento anual aproximado *</label>
+                                <select name="lead_faturamento" class="input-field" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="Até 1M">Até R$ 1 Milhão</option>
+                                    <option value="1M-5M">De R$ 1 a 5 Milhões</option>
+                                    <option value="5M-20M">De R$ 5 a 20 Milhões</option>
+                                    <option value="20M-50M">De R$ 20 a 50 Milhões</option>
+                                    <option value="50M+">Acima de R$ 50 Milhões</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Success -->
+                    <div class="step text-center py-12" id="step-7">
+                        <div class="mx-auto w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mb-6">
+                            <svg class="lucide w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4">Diagnóstico recebido com sucesso.</h2>
+                        <p class="text-lg text-muted-foreground mb-8 max-w-lg mx-auto">Nossa equipe irá analisar as informações fornecidas e retornar com uma avaliação inicial das oportunidades identificadas para sua empresa.</p>
+                        <a href="/" class="inline-flex items-center gap-2 bg-border hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg> Voltar para página inicial
+                        </a>
+                    </div>
+
+                    <!-- Botões de Navegação -->
+                    <div class="mt-8 flex justify-between pt-6 border-t border-border" id="nav-buttons">
+                        <button type="button" data-action="prev" id="btn-prev" class="invisible bg-transparent hover:bg-white/5 border border-border px-5 py-2.5 rounded-lg text-sm font-medium transition-colors">
+                            Voltar
+                        </button>
+                        <button type="button" data-action="next" id="btn-next" class="bg-primary hover:bg-blue-600 px-5 py-2.5 rounded-lg text-sm font-medium shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-colors">
+                            Avançar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Portfolio Section -->
+        <div class="w-full max-w-6xl mx-auto mt-24 mb-10 px-4" id="portfolio-container">
+            <!-- Counters -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-20 text-center" id="counters-section">
+                <div class="glass-card p-6 rounded-2xl border border-border">
+                    <div class="text-4xl md:text-5xl font-bold text-primary mb-2 counter" data-target="10">0</div>
+                    <div class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Projetos em Produção</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-border">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-400 mb-2 counter" data-target="15">0</div>
+                    <div class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Soluções de IA</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border border-border">
+                    <div class="text-4xl md:text-5xl font-bold text-purple-400 mb-2 counter" data-target="22">0</div>
+                    <div class="text-xs md:text-sm text-muted-foreground uppercase tracking-wider font-semibold">Plataformas Digitais</div>
+                </div>
+            </div>
+
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Projetos que <span class="text-gradient">Geram Resultado</span></h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Conheça algumas das soluções já entregues e os projetos que estão sendo construídos para transformar negócios através de tecnologia, automação e inteligência artificial.</p>
+            </div>
+
+
+            <!-- Prod Content -->
+            <div id="content-prod" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-500">
+                <!-- 1 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://www.inovamind.dev">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Site Institucional Inovamind</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Portal institucional da Inovamind apresentando soluções de tecnologia, automação, inteligência artificial e transformação digital.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://concilia.inovamind.dev">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1" />
+  <rect width="7" height="5" x="14" y="3" rx="1" />
+  <rect width="7" height="9" x="14" y="12" rx="1" />
+  <rect width="7" height="5" x="3" y="16" rx="1" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">InovaConcilia</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Plataforma de conciliação contábil automatizada com IA: importa extratos, identifica divergências e acelera o fechamento financeiro.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://flow.inovamind.dev/">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2" />
+  <path d="M7 11v4a2 2 0 0 0 2 2h4" />
+  <rect width="8" height="8" x="13" y="13" rx="2" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">InovaFlow</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Plataforma centralizadora de integrações, canais de atendimento e agentes de IA configuráveis em um único ambiente operacional.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://thalesfernandes.dev">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+  <circle cx="12" cy="7" r="4" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Landing Page - Thales Fernandes</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Presença digital profissional focada em posicionamento e autoridade.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://victorgabriel.dev">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+  <circle cx="12" cy="7" r="4" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Landing Page - Victor Gabriel</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Projeto de posicionamento profissional e apresentação de serviços.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://www.imoveislucas.com.br">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Imóveis Lucas</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Portal imobiliário com gestão de imóveis e geração de oportunidades comerciais.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://itabiraeregiao.com.br">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Itabira e Região</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Portal regional de conteúdo e informação.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://noticias.inovamind.dev">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18h-5" />
+  <path d="M18 14h-8" />
+  <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2" />
+  <rect width="8" height="4" x="10" y="6" rx="1" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Portal de Notícias Inovamind</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Central de conteúdo e notícias automatizadas.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://painel-seo.inovamind.dev">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21v-6" />
+  <path d="M12 21V9" />
+  <path d="M19 21V3" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Painel SEO</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Sistema para monitoramento e gestão de estratégias SEO.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://agente-inovamind.inovamind.dev/demo/chat">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8" />
+  <rect width="16" height="12" x="4" y="8" rx="2" />
+  <path d="M2 14h2" />
+  <path d="M20 14h2" />
+  <path d="M15 13v2" />
+  <path d="M9 13v2" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Inova Agente</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Agente de inteligência artificial para demonstração de atendimento e qualificação de leads.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- Bike Mania Itabira -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://bikemaniaitabira.com.br">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1" />
+  <circle cx="19" cy="21" r="1" />
+  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Em Produção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">Bike Mania Itabira</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Loja online (e-commerce próprio) da Bike Mania Itabira: bicicletas, peças e acessórios de ciclismo, com catálogo, carrinho, checkout e painel administrativo.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+                <!-- NexFert -->
+                <div class="glass-card p-6 rounded-xl border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(59,130,246,0.1)] group flex flex-col h-full cursor-pointer" data-open="https://nexfert.com.br">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                            <svg class="lucide w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+  <path d="M15 18H9" />
+  <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+  <circle cx="17" cy="18" r="2" />
+  <circle cx="7" cy="18" r="2" /></svg>
+                        </div>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">Em Construção</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">NexFert</h3>
+                    <p class="text-muted-foreground text-sm mb-6 flex-grow">Plataforma logtech do agro: marketplace que conecta quem tem carga a quem tem caminhão, com cotação aberta, rastreamento ao vivo e entrega confirmada por QR. Site institucional no ar; apps nativos e painel em construção.</p>
+                    <div class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-blue-400 transition-colors mt-auto">
+                        Acessar Projeto <svg class="lucide w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6" />
+  <path d="M10 14 21 3" />
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Final -->
+            <div class="mt-20 glass-card p-8 md:p-12 rounded-2xl text-center border border-border bg-gradient-to-br from-background to-card relative overflow-hidden">
+                <div class="absolute inset-0 bg-primary/5"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Não mostramos apenas ideias. <span class="text-gradient">Construímos soluções reais.</span></h3>
+                    <p class="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">Cada projeto apresentado representa um desafio de negócio transformado em resultado através de tecnologia, automação, inteligência artificial e inteligência de negócios.</p>
+                    <button data-action="scroll-hero" class="inline-flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-6 py-4 rounded-xl font-bold text-base md:text-lg transition-all shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:shadow-[0_0_40px_rgba(59,130,246,0.6)] hover:-translate-y-1 cursor-pointer">
+                        Quero Descobrir Oportunidades para Minha Empresa <svg class="lucide w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" />
+  <path d="m16 12-4-4-4 4" />
+  <path d="M12 16V8" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+</main>
+
+    <footer class="border-t border-border bg-background/40 py-6 text-center text-sm text-muted-foreground mt-auto">
+        <div class="mx-auto max-w-7xl px-6">
+            <p>© 2026 Inovamind. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/descoberta.js?v=6a79eff31aa7" defer></script>
+</body>
+</html>

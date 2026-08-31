@@ -1,0 +1,1 @@
+const v=new URL(import.meta.url).search;const{initThreeHero}=await import(`/static/js/three-hero.js${v}`);const start=()=>initThreeHero("three-hero-container");if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",start);}else{start();}
